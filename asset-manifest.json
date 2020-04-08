@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8653d04c.chunk.css",
+    "main.js": "/static/js/main.4f5b6ac2.chunk.js",
+    "main.js.map": "/static/js/main.4f5b6ac2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7c1a7ef6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7c1a7ef6.js.map",
+    "static/js/2.653af8aa.chunk.js": "/static/js/2.653af8aa.chunk.js",
+    "static/js/2.653af8aa.chunk.js.map": "/static/js/2.653af8aa.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4d86e4b95b94b3d2408ef05721d64af1.js": "/precache-manifest.4d86e4b95b94b3d2408ef05721d64af1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.8653d04c.chunk.css.map": "/static/css/main.8653d04c.chunk.css.map",
+    "static/js/2.653af8aa.chunk.js.LICENSE.txt": "/static/js/2.653af8aa.chunk.js.LICENSE.txt",
+    "static/js/main.4f5b6ac2.chunk.js.LICENSE.txt": "/static/js/main.4f5b6ac2.chunk.js.LICENSE.txt",
+    "static/media/gameOver.mp3": "/static/media/gameOver.33d84f71.mp3",
+    "static/media/hail.mp3": "/static/media/hail.d829ece5.mp3",
+    "static/media/piano.wav": "/static/media/piano.d60a7f69.wav",
+    "static/media/sad.png": "/static/media/sad.640638fc.png",
+    "static/media/sadSquirrel.png": "/static/media/sadSquirrel.82532eef.png",
+    "static/media/umichWinter.jpg": "/static/media/umichWinter.80298048.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c1a7ef6.js",
+    "static/js/2.653af8aa.chunk.js",
+    "static/css/main.8653d04c.chunk.css",
+    "static/js/main.4f5b6ac2.chunk.js"
+  ]
+}
