@@ -1,0 +1,745 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.row {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.house {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 12em;
+  height: 18em;
+  margin: 1em;
+  padding: 0;
+}
+
+.defaultHouse {
+  stroke: brown;
+  fill: burlywood;
+}
+
+.collapsedHouse {
+  stroke: brown;
+  fill: burlywood;
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+.wood path {
+    stroke: #795548;
+    stroke-width: 0.25em;
+}
+
+.clay path {
+  stroke: #BF360C;
+  stroke-width: 0.5em;
+}
+
+.concrete path {
+  stroke:#424242;
+  stroke-width: 0.75em;
+}
+
+.metal path {
+  stroke: #90A4AE;
+  stroke-width: 1em;
+}
+
+.house .brick {
+  stroke:#FFB7B2;
+  fill:#FF9AA2;
+}
+
+.house .stone {
+  stroke: purple;
+  fill: #C7CEEA;
+}
+
+.house .shingle {
+  stroke:lightslategray;
+  fill:#B5EAD7;
+}
+
+.house > * {
+    position: absolute;
+    margin: auto;
+    width: inherit;
+    height: inherit;
+}
+
+.decoration {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  bottom: 0;
+  justify-content: center;
+}
+
+.roof {
+  position: absolute;
+  stroke-width: 1em;
+  stroke: red;
+  fill: transparent;
+  z-index: -1;
+}
+
+.door {
+  position: absolute;
+  bottom: 0;
+}
+
+.snow {
+  z-index: -2;
+  fill: snow;
+  stroke: lightgray;
+}
+
+.snow_gone {
+  fill: snow;
+  stroke: lightgray;
+  stroke-opacity: 0;
+  fill-opacity: 0;
+}
+
+
+.window {
+  padding: 0.1em;
+  /*border: solid green 0.5px;*/
+}
+
+.exclamationPoint {
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+
+#houses {
+    position: absolute;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    bottom: 0em;
+    z-index: 0;
+    /* margin-top: 25%; */
+}
+
+#GameDisplay {
+    position: absolute;
+    width: 100%;
+    /* height: 30em; */
+    height: 100%;
+    margin: auto;
+    /* border: solid 0.1em lightskyblue; */
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /* position: absolute; */
+    /* top: 2em; */
+}
+
+#EntireGame {
+  display: none;
+}
+
+#help-popup {
+  min-width: 12em;
+  padding: 1em;
+}
+
+#help-popup-header {
+  background: white;
+  top: 0em;
+  position: sticky;
+  z-index: 10;
+}
+
+.help-popup-content {
+  overflow-x: clip;
+  overflow-y: scroll; 
+}
+
+.help-popup-content > * {
+  margin: 1em;
+}
+
+/*
+  Beginning of font pulled from https://www.onlinewebfonts.com/download/9d17ad1db002d49d083b7f440498feb8
+*/
+
+@font-face {
+  font-family: "SnowaW00-Snow"; 
+  src: url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.eot"); 
+  src: url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.eot?#iefix") 
+  format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.woff2") 
+  format("woff2"), url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.woff") format("woff"), 
+  url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.ttf") format("truetype"), 
+  url("//db.onlinewebfonts.com/t/9d17ad1db002d49d083b7f440498feb8.svg#SnowaW00-Snow") format("svg"); 
+}
+
+/*
+  End of font pulled from https://www.onlinewebfonts.com/download/9d17ad1db002d49d083b7f440498feb8
+*/
+
+#SplashDisplay {
+  position: absolute;
+  width: 100%;
+  /* height: 30em; */
+  height: 100%;
+  margin: auto;
+  /* border: solid 0.1em lightskyblue; */
+  overflow: hidden;
+  /* position: absolute; */
+  /* top: 2em; */
+
+  font-family: "SnowaW00-Snow";
+  text-align: center;
+}
+
+#gameOverDisplay {
+  position: absolute;
+  width: 100%;
+  /* height: 30em; */
+  height: 100%;
+  margin: auto;
+  /* border: solid 0.1em lightskyblue; */
+  overflow: hidden;
+  /* position: absolute; */
+  /* top: 2em; */
+
+  font-family: "SnowaW00-Snow";
+  text-align: center;
+  display: none;
+
+}
+
+
+#welcomeTo {
+  font-size: 4em;
+}
+
+#snowblaster {
+  font-size: 7em;
+}
+
+#developedBy {
+  font-size: 1.5em;
+}
+
+#ScrollingBeginning {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+#scrollingFinButton {
+  width: 3%;
+  left: 45%;
+  top: 20%;
+}
+
+#blackBackground {
+
+  display: none;
+  position: relative;
+  width: 100%;
+  /*tentative*/
+  height: 100em;
+  background: #000;
+}
+
+#scrollingButton {
+  display: fixed;
+  position: absolute;
+  background:#fff;
+  color:#000;
+  left: 2%;
+  bottom: 2%;
+  height: 1.5em;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+
+#bestUse {
+  background-color: transparent;
+  font-family: fantasy;
+  font-weight: light;
+}
+
+#gameOverText {
+  z-index: -1;
+  top: 20%;
+  left: 50%;
+  position: absolute;
+}
+
+#gameFinTextBox{
+  z-index: 3;
+  top: 30%;
+  width: 40%;
+  height: 30%;
+  left : 27%;
+  font-size: x-large;
+  text-align: left;
+  color: black;
+  position: absolute;
+  font-family: fantasy;
+  overflow:auto;
+  border:4px solid red;
+  padding:2%;
+  background-color: whitesmoke;
+  opacity: 0.7;
+}
+
+
+#returnToBeginning{
+  z-index: 3;
+  top: 70%;
+  left: 50%;
+  width: 13.5%;
+  font-family: fantasy;
+  position: absolute;
+}
+
+#umichWinterPic {
+  width: 100%;
+  height: 100%;
+  margin: 0em;
+  padding: 0em;
+  left: 0em;
+  z-index: -1;
+  position: absolute;
+
+}
+#collapsedBuildingPic{
+  width: 100%;
+  height : 60%;
+  left: 0em;
+  bottom: -2em;
+  margin: 0em;
+  padding: 0em;
+  position: absolute;
+  z-index: 2;
+
+}
+#cryingSquirrelPic{
+  height: 27%;
+
+  left: 15%;
+  bottom: 1%;
+  position: absolute;
+  z-index: -1;
+
+}
+/* 
+  Beginning of code pulled from https://css-tricks.com/snippets/css/star-wars-crawl-text/
+  Used for scrolling star wars text
+*/
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  top: -1.51 em;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 5em;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 100%;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0em;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -80em;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+/* 
+  End of code pulled from https://css-tricks.com/snippets/css/star-wars-crawl-text/
+*/
+
+
+/* 
+  Beginning of code pulled from https://codepen.io/hsdua2304/pen/GYoxoq
+  Used for custom button
+*/
+
+.box{
+  position:relative;
+  left:50%;
+  transform : translate(-50% ,-50%);
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:20px 40px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
+}
+
+.btn-white{
+  background:#fff;
+  color:#000;
+}
+
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
+
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+  transform:translateY(-1px);
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
+}
+
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+    background: #fff;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes comeFromBottom{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  } 
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+/* 
+End of code pulled from https://codepen.io/hsdua2304/pen/GYoxoq
+*/
+
+
+
+
+/*
+Beginning of code pulled from https://codepen.io/acupoftee/pen/RwNXxyq
+Used for flickering game over text
+*/
+
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+
+
+.sign {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6.5em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+End of code pulled from https://codepen.io/acupoftee/pen/RwNXxyq
+*/
+
+.collapsed, .collapsed > * {
+  visibility: hidden;
+}
+
+[id^="collapse"] {
+  visibility: visible !important;
+}
