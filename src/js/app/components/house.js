@@ -241,8 +241,19 @@ class House extends React.Component {
                 roofType: ROOF_TYPES[this.state.roofType.strength + 1],
                 maxNumSnowLayers: state.maxNumSnowLayers + 1,
                 houseCondition: ((state.numSnowLayers < (state.maxNumSnowLayers + 1)) ? "standing" : "collapsing"),
-                nearCollapse: (state.numSnowLayers < (state.maxNumSnowLayers)) ? false : true
+                nearCollapse: (state.numSnowLayers < (state.maxNumSnowLayers)) ? false : true,
+                healthPercent: ((state.numSnowLayers) / state.maxNumSnowLayers + 1) * 100
             }));
+
+            if (this.state.healthPercent >= 75) {
+                this.setState({ healthColor: "#FF5733" })
+            }
+            else if (this.state.healthPercent >= 50) {
+                this.setState({ healthColor: "#FCFF33" })
+            }
+            else {
+                this.setState({ healthColor: "#6BFF33" })
+            }
         }
     }
     

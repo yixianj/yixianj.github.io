@@ -41,7 +41,8 @@ export default class App extends React.Component {
           gameDifficulty: "medium", // easy, medium, hard
           gameIsReady: false,
           numLives: NUM_LIVES,
-          gameOver: false
+          gameOver: false,
+          firstPlay: true
       };
 
       this.toggleSettingsPopup = this.toggleSettingsPopup.bind(this);
@@ -70,9 +71,15 @@ export default class App extends React.Component {
   }
 
   toggleHelpPopup() {
+    // If first opening the game and closing the popup, immediately start game
+    if (this.state.firstPlay && this.state.showHelpPopup) {
+        this.togglePlayGame();
+    }
+
     this.setState({  
-        showHelpPopup: !this.state.showHelpPopup  
-    });  
+        showHelpPopup: !this.state.showHelpPopup,
+        firstPlay: false
+    });
   }
 
   toggleAudio() {
