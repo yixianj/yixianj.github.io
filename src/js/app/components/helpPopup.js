@@ -68,7 +68,7 @@ class HelpPopup extends React.Component {
 						</div>
 					</div>
 				);
-				header = "Build";
+				header = "Shovel";
 				break;
 			case 2:
 				instructions = (
@@ -86,7 +86,7 @@ class HelpPopup extends React.Component {
 						</div>
 					</div>
 				);
-				header = "Shovel";
+				header = "Build";
 				break;
 			case 3:
 				instructions = (
