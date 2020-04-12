@@ -171,7 +171,7 @@ img {
 #help-popup-prev-arrow {
   position: absolute;
   top: 1em;
-  right: 3em;
+  left: 4em;
   opacity: 0.8;
 }
 
