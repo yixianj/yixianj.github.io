@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./../assets/simple-background.jpg') no-repeat center center fixed;
+  background: url('./../assets/umich-background.jpeg') no-repeat center center fixed;
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: saturation;
@@ -171,7 +171,7 @@ img {
 #help-popup-prev-arrow {
   position: absolute;
   top: 1em;
-  left: 4em;
+  left: 3.5em;
   opacity: 0.8;
 }
 
@@ -212,15 +212,11 @@ figure {
 }
 
 .instructions figure img {
-  width: 6em;
+  width: 8em;
   margin: 1em;
   border: solid grey 0.1em;
 }
 
-#instructions0 > figure img {
-  width: 1.5em;
-  border: none;
-}
 /*
 #shovel_house_help{
   width: 100px;
@@ -363,7 +359,7 @@ figure {
 
 #health-bar {
   width: 75%;
-  top: 100%;
+  top: 99%;
 }
 
 /* https://www.flaticon.com/search?word=x&style_id=136 */
